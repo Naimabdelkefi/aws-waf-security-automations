@@ -642,6 +642,124 @@ Resources:
                         - Priority: 2
                           Type: HTML_ENTITY_DECODE
           - !Ref 'AWS::NoValue'
+        - Name: "api-whitelist"
+          Priority: 0
+          Statement:
+              OrStatement:
+                Statements:
+                  - ByteMatchStatement:
+                      SearchString: "/socket.io"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/data/schools/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/data/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/cv/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/companyTest/getTests"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/jobPost/myApplications"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/blogs/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/partners/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/pricing/order/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/manageResponsible/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/manageJobPosts/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/interview/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/cv/get"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+                  - ByteMatchStatement:
+                      SearchString: "/api/companyEmail/add"
+                      FieldToMatch:
+                        UriPath: { }
+                      TextTransformations:
+                        - Priority: 0
+                          Type: "NONE"
+                      PositionalConstraint: "CONTAINS"
+
 
 Outputs:
 # Arns
