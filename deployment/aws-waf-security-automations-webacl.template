@@ -644,6 +644,12 @@ Resources:
           - !Ref 'AWS::NoValue'
         - Name: "api-whitelist"
           Priority: 0
+          Action:
+            Allow: {}
+          VisibilityConfig:
+            CloudWatchMetricsEnabled: true
+            MetricName: api-whitelist
+            SampledRequestsEnabled: true
           Statement:
               OrStatement:
                 Statements:
