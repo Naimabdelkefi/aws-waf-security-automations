@@ -394,7 +394,7 @@ Resources:
         - !If
           - AWSManagedRulesActivated
           - Name: AWS-AWSManagedRulesCommonRuleSet
-            Priority: 0
+            Priority: 1
             OverrideAction:
               None: {}
             VisibilityConfig:
@@ -407,7 +407,7 @@ Resources:
                 Name: AWSManagedRulesCommonRuleSet
           - !Ref 'AWS::NoValue'
         - Name: !Sub '${ParentStackName}WhitelistRule'
-          Priority: 1
+          Priority: 2
           Action:
             Allow: {}
           VisibilityConfig:
@@ -422,7 +422,7 @@ Resources:
                 - IPSetReferenceStatement:
                     Arn: !GetAtt WAFWhitelistSetV6.Arn
         - Name: !Sub '${ParentStackName}BlacklistRule'
-          Priority: 2
+          Priority: 3
           Action:
             Block: {}
           VisibilityConfig:
@@ -439,7 +439,7 @@ Resources:
         - !If
           - HttpFloodProtectionLogParserActivated
           - Name: !Sub '${ParentStackName}HttpFloodRegularRule'
-            Priority: 3
+            Priority: 4
             Action:
               Block: {}
             VisibilityConfig:
@@ -457,7 +457,7 @@ Resources:
         - !If
           - HttpFloodProtectionRateBasedRuleActivated
           - Name: !Sub '${ParentStackName}HttpFloodRateBasedRule'
-            Priority: 4
+            Priority: 5
             Action:
               Block: {}
             VisibilityConfig:
@@ -472,7 +472,7 @@ Resources:
         - !If
           - ScannersProbesProtectionActivated
           - Name: !Sub '${ParentStackName}ScannersAndProbesRule'
-            Priority: 5
+            Priority: 6
             Action:
               Block: {}
             VisibilityConfig:
@@ -490,7 +490,7 @@ Resources:
         - !If
           - ReputationListsProtectionActivated
           - Name: !Sub '${ParentStackName}IPReputationListsRule'
-            Priority: 6
+            Priority: 7
             Action:
               Block: {}
             VisibilityConfig:
@@ -508,7 +508,7 @@ Resources:
         - !If
           - BadBotProtectionActivated
           - Name: !Sub '${ParentStackName}BadBotRule'
-            Priority: 7
+            Priority: 8
             Action:
               Block: {}
             VisibilityConfig:
